@@ -3,6 +3,7 @@ from functions.functions import create_dict, get_shop_list_by_dishes, sort_files
 file = 'source/recipes.txt'
 # Задача 1: делаем словарь из файла
 cook_book = create_dict(file)
+print(cook_book)
 
 # Задача 2:
 dish_list = ['Омлет', 'Фахитос', 'Запеченный картофель']
@@ -15,3 +16,4 @@ for keys, values in get_shop_list_by_dishes(dish_list, persons, cook_book).items
 path = 'source/'
 name_file_list = ['1.txt', '2.txt', '3.txt']
 sort_files(path, name_file_list)
+# результат в папке result
