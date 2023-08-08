@@ -1,27 +1,14 @@
-def create_dict(file_):
-    cook_book = {}
-    with open(file_, encoding='utf-8') as work_file:
-        for line in work_file:
-            dish_name = line.lower().strip()
-            count_ing = int(work_file.readline())
-            ingredient_list = []
-            for quant in range(count_ing):
-                ingredient_name, quantity, measure = work_file.readline().lower().strip().split('|')
-                ingr_dict = {
-                    'ingredient_name': ingredient_name,
-                    'quantity': quantity,
-                    'measure': measure,
-                }
-                ingredient_list.append(ingr_dict)
-            work_file.readline()
-            cook_book[dish_name] = ingredient_list
-
-    if len(cook_book) > 0:
-        return cook_book
-    else:
-        return 'Файл пуст'
-
+from functions.functions import create_dict, get_shop_list_by_dishes
 
 file = 'source/recipes.txt'
+# Задача 1: делаем словарь из файла
+cook_book = create_dict(file)
 
-print(create_dict(file))
+# Задача 2:
+dish_list = ['Омлет', 'млет']
+persons = 2
+# для наглядности(удобства) напечатаем так
+for keys, values in get_shop_list_by_dishes(dish_list, persons, cook_book).items():
+    print(keys, values)
+
+
