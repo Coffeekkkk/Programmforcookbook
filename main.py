@@ -11,8 +11,7 @@ persons = 2
 for keys, values in get_shop_list_by_dishes(dish_list, persons, cook_book).items():
     print(keys, values)
 
-
-#Задача 3
+# Задача 3
 path = 'source/'
 name_file_list = ['1.txt', '2.txt', '3.txt']
 sort_files(path, name_file_list)
